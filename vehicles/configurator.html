@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="../images/logo.png" type="image/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercedes-Benz | Configurator</title>
+
+    <!-- MDB5 CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!--Font Share-->
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,600&f[]=chillax@200,600&f[]=kola@400&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+  <body>
+    <canvas id="cursor-canvas"></canvas>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img
+            class="mb-logo"
+            src="../images/logo.png"
+            alt="Mercedes-Benz Logo"
+            style="height: 40px; width: auto; filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2)); background: rgba(26, 26, 26, 0.85); border-radius: 6px; padding: 2px 8px;"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarNav"
+        >
+          <div class="animated-hamburger">
+            <lottie-player
+              src="../js/menu-toggle.json"
+              background="transparent"
+              speed="1"
+              style="width: 40px; height: 40px"
+              hover
+            ></lottie-player>
+          </div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown mega-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="vehiclesDropdown"
+                role="button"
+                data-mdb-toggle="dropdown"
+              >
+                Vehicles
+              </a>
+              <div class="dropdown-menu mega-menu">
+                <div class="row">
+                  <div class="col-md-3">
+                    <h6>Sedans</h6>
+                    <a class="dropdown-item" href="../vehicles/sedans.html">A-Class</a>
+                    <a class="dropdown-item" href="../vehicles/sedans.html">C-Class</a>
+                    <a class="dropdown-item" href="../vehicles/sedans.html">E-Class</a>
+                    <a class="dropdown-item" href="../vehicles/sedans.html">S-Class</a>
+                  </div>
+                  <div class="col-md-3">
+                    <h6>SUVs</h6>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLA</a>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLC</a>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLE</a>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLS</a>
+                  </div>
+                  <div class="col-md-3">
+                    <h6>Electric Vehicles</h6>
+                    <a class="dropdown-item" href="../vehicles/electric.html">EQA</a>
+                    <a class="dropdown-item" href="../vehicles/electric.html">EQB</a>
+                    <a class="dropdown-item" href="../vehicles/electric.html">EQC</a>
+                    <a class="dropdown-item" href="../vehicles/electric.html">EQS</a>
+                  </div>
+                  <div class="col-md-3">
+                    <h6>Performance</h6>
+                    <a class="dropdown-item" href="#">AMG GT</a>
+                    <a class="dropdown-item" href="#">AMG SL</a>
+                    <a class="dropdown-item" href="#">Maybach</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Technology</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Owners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+          <form class="d-flex search-box">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search..."
+              />
+              <button class="btn btn-outline-light" type="button">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Configurator Hero -->
+    <section class="configurator-hero">
+        <div class="hero-content">
+            <h1>Experience Your Mercedes-Benz</h1>
+            <p>View Your Mercedes Benz Models With Our Online 360-view</p>
+        </div>
+    </section>
+<section class="configurator-mbux-video py-5 mbux-bg-gradient">
+  <div class="container">
+    <h2 class="section-title text-center mb-4 mbux-title">MBUX Experience</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="video-clip-viewer position-relative rounded-4 overflow-hidden shadow mbux-video-bg">
+          <video
+            id="mbux-video"
+            class="w-100 rounded-4 mbux-video-bgcolor"
+            poster="../images/maybach-poster.jpg"
+            autoplay
+            loop
+            muted
+            playsinline>
+            <source src="../images/maybach.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-caption text-center py-3 mbux-caption">
+            Discover the Mercedes-Benz User Experience (EQ) in action.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- 3D Configurator View: EQS -->
+    <section class="configurator-3d py-5" style="background: linear-gradient(120deg, #181818 60%, #232526 100%);">
+      <div class="container">
+      <h2 class="section-title text-center mb-5" style="color:#fff; font-weight:700;">360° View: EQS Sedan</h2>
+      <div class="model-viewer" style="background:rgba(36,38,40,0.98); border-radius:18px; box-shadow:0 2px 16px rgba(0,0,0,0.13); padding:2rem;">
+        <model-viewer 
+        src="/3D models/AMG.glb"
+        alt="EQS 3D Model"
+        camera-controls
+        auto-rotate
+        ar
+        style="width:100%; height:480px; background:#181818; border-radius:10px; box-shadow:0 2px 16px rgba(0,0,0,0.13);"
+        >
+        </model-viewer>
+        <div class="three-info mt-4 text-center">
+        <h4 style="color:#00c6fb; font-weight:600;">Explore in 3D</h4>
+        <p style="color:#bbb;">Rotate the EQS Sedan to view it from every angle. Zoom in to see details of the exterior, wheels, and even peek inside the interior.</p>
+        <ul class="list-unstyled" style="color:#fff;">
+          <li><i class="fas fa-arrows-alt"></i> Drag to rotate</li>
+          <li><i class="fas fa-search-plus"></i> Pinch or scroll to zoom</li>
+         
+        </ul>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- 3D Configurator View: C-Class -->
+    <section class="configurator-3d py-5" style="background: linear-gradient(120deg, #232526 60%, #181818 100%);">
+      <div class="container">
+      <h2 class="section-title text-center mb-5" style="color:#fff; font-weight:700;">360° View: Maybach</h2>
+      <div class="model-viewer" style="background:rgba(36,38,40,0.98); border-radius:18px; box-shadow:0 2px 16px rgba(0,0,0,0.13); padding:2rem;">
+        <model-viewer 
+        src="/3D models/maybach.glb
+        "
+        alt="C-Class 3D Model"
+        camera-controls
+        auto-rotate
+        ar
+        style="width:100%; height:480px; background:#181818; border-radius:10px; box-shadow:0 2px 16px rgba(0,0,0,0.13);"
+        >
+        </model-viewer>
+        <div class="three-info mt-4 text-center">
+        <h4 style="color:#00c6fb; font-weight:600;">Explore in 3D</h4>
+        <p style="color:#bbb;">Rotate the Maybach to view it from every angle. Zoom in to see details of the exterior, wheels, and interior.</p>
+        <ul class="list-unstyled" style="color:#fff;">
+          <li><i class="fas fa-arrows-alt"></i> Drag to rotate</li>
+          <li><i class="fas fa-search-plus"></i> Pinch or scroll to zoom</li>
+          
+        </ul>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- 3D Configurator View: GLC SUV -->
+    <section class="configurator-3d py-5" style="background: linear-gradient(120deg, #181818 60%, #232526 100%);">
+      <div class="container">
+      <h2 class="section-title text-center mb-5" style="color:#fff; font-weight:700;">360° View: Mercedes 2002</h2>
+      <div class="model-viewer" style="background:rgba(36,38,40,0.98); border-radius:18px; box-shadow:0 2px 16px rgba(0,0,0,0.13); padding:2rem;">
+        <model-viewer 
+        src="/3D models/BENZ 202.glb"
+        alt="GLC SUV 3D Model"
+        camera-controls
+        auto-rotate
+        ar
+        style="width:100%; height:480px; background:#181818; border-radius:10px; box-shadow:0 2px 16px rgba(0,0,0,0.13);"
+        >
+        </model-viewer>
+        <div class="three-info mt-4 text-center">
+        <h4 style="color:#00c6fb; font-weight:600;">Explore in 3D</h4>
+        <p style="color:#bbb;">Rotate the Mercedes 2002 to view it from every angle. Zoom in to see details of the exterior, wheels, and interior.</p>
+        <ul class="list-unstyled" style="color:#fff;">
+          <li><i class="fas fa-arrows-alt"></i> Drag to rotate</li>
+          <li><i class="fas fa-search-plus"></i> Pinch or scroll to zoom</li>
+
+        </ul>
+        </div>
+      </div>
+      </div>
+      <!-- model-viewer script -->
+      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    </section>
+<section class="configurator-mbux-video py-5 mbux-bg-gradient">
+  <div class="container">
+    <h2 class="section-title text-center mb-4 mbux-title">MBUX Experience</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="video-clip-viewer position-relative rounded-4 overflow-hidden shadow mbux-video-bg">
+          <video
+            id="mbux-video"
+            class="w-100 rounded-4 mbux-video-bgcolor"
+            poster="../images/maybach-poster.jpg"
+            autoplay
+            loop
+            muted
+            playsinline>
+            <source src="../images/s class.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-caption text-center py-3 mbux-caption">
+            Discover the Mercedes-Benz User Experience (Maybach) in action.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 mb-4">
+            <h5>Mercedes-Benz</h5>
+            <ul class="footer-links">
+              <li><a href="#" style="font-weight:600; color:#fff;">Company</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Careers</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Press</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Investors</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 mb-4">
+            <h5>Services</h5>
+            <ul class="footer-links">
+              <li><a href="#" style="font-weight:600; color:#fff;">Mercedes me</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Financial Services</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Service & Parts</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Mercedes-Benz Collection</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-lg-3 mb-4">
+            <h5>Connect With Us</h5>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="newsletter mt-3">
+              <p>Subscribe to our newsletter</p>
+              <form>
+                <div class="input-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Your email"
+                  />
+                  <button class="btn btn-primary" type="submit">
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <style>
+          .footer-links a {
+            font-weight: 700 !important;
+            color: #fff !important;
+            letter-spacing: 0.5px;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+          }
+          .footer-links a:hover, .footer-links a:focus {
+            color:#dc3545 !important;
+            text-decoration: none !important;
+            transform: ease-in-out 0.2s;
+            transition: ease-in-out 0.2s;
+          }
+        </style>
+        <hr class="my-4" />
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2025 Mercedes-Benz. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p>
+             Crafted By Passion And Made With <i class="fas fa-heart"></i> by Adeoye 💯 </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- MDB5 JS -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+    ></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/swiper-init.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Additional JS for configurator -->
+    <script src="js/configurator.js"></script>
+</body>
+</html>

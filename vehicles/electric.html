@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+  <head>
+      <link rel="shortcut icon" href="../images/logo.png" type="image/logo.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercedes-Benz | Electric</title>
+
+    <!-- MDB5 CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!--Font Share-->
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,600&f[]=chillax@200,600&f[]=kola@400&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+  <body>
+    <canvas id="cursor-canvas"></canvas>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img
+            class="mb-logo"
+            src="../images/logo.png"
+            alt="Mercedes-Benz Logo"
+            style="height: 40px; width: auto; filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2)); background: rgba(26, 26, 26, 0.85); border-radius: 6px; padding: 2px 8px;"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarNav"
+        >
+          <div class="animated-hamburger">
+            <lottie-player
+              src="../js/menu-toggle.json"
+              background="transparent"
+              speed="1"
+              style="width: 40px; height: 40px"
+              hover
+            ></lottie-player>
+          </div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown mega-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="vehiclesDropdown"
+                role="button"
+                data-mdb-toggle="dropdown"
+              >
+                Vehicles
+              </a>
+              <div class="dropdown-menu mega-menu">
+                <div class="row">
+                  <div class="col-md-3">
+                    <h6>Sedans</h6>
+                    <a class="dropdown-item" href="../vehicles/sedans.html">A-Class</a>
+                    <a class="dropdown-item" href="../vehicles/sedans.html">C-Class</a>
+                    <a class="dropdown-item" href="../vehicles/sedans.html">E-Class</a>
+                    <a class="dropdown-item" href="../vehicles/sedans.html">S-Class</a>
+                  </div>
+                  <div class="col-md-3">
+                    <h6>SUVs</h6>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLA</a>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLC</a>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLE</a>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLS</a>
+                  </div>
+                  <div class="col-md-3">
+                    <h6>Electric Vehicles</h6>
+                    <a class="dropdown-item" href="../vehicles/electric.html">EQA</a>
+                    <a class="dropdown-item" href="../vehicles/electric.html">EQB</a>
+                    <a class="dropdown-item" href="../vehicles/electric.html">EQC</a>
+                    <a class="dropdown-item" href="../vehicles/electric.html">EQS</a>
+                  </div>
+                  <div class="col-md-3">
+                    <h6>Performance</h6>
+                    <a class="dropdown-item" href="#">AMG GT</a>
+                    <a class="dropdown-item" href="#">AMG SL</a>
+                    <a class="dropdown-item" href="#">Maybach</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="electric.html">Technology</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../about.html">Owners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+          </ul>
+          <form class="d-flex search-box">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search..."
+              />
+              <button class="btn btn-outline-light" type="button">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- EQ Hero Section -->
+    <section class="vehicle-hero eq-hero">
+      <div class="hero-content">
+        <h1>Mercedes-EQ</h1>
+        <p>Welcome to the era of electric intelligence</p>
+      </div>
+    </section>
+
+    <!-- EQ Model Showcase -->
+    <!-- Futuristic Loading Page -->
+    <div id="eq-loading" style="position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:radial-gradient(ellipse at center,#181c23 0%,#0a0c10 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;">
+      <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_2glqweqs.json" background="transparent" speed="1" style="width:180px;height:180px;" loop autoplay></lottie-player>
+      <h2 style="color:#fff;font-family:'Clash Display',sans-serif;font-weight:700;letter-spacing:2px;margin-top:1.5rem;text-shadow:0 0 16px #00eaff;">Loading Mercedes-EQ Experience...</h2>
+    </div>
+    <script>
+      window.addEventListener('load',function(){
+        setTimeout(function(){
+          document.getElementById('eq-loading').style.opacity='0';
+          setTimeout(function(){
+            document.getElementById('eq-loading').style.display='none';
+          },500);
+        },1200);
+      });
+    </script>
+
+    <!-- EQ Model Showcase (Swiper for all models, EQA/EQS/EQC/EQB) -->
+    <section class="eq-showcase py-5" style="display:none;" id="eqShowcaseSection">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Electric Vehicle Lineup</h2>
+        <div class="swiper eqSwiper">
+          <div class="swiper-wrapper">
+            <!-- EQA -->
+            <div class="swiper-slide">
+              <div class="eq-card eq-card-featured text-center">
+                <div class="eq-image mb-3">
+                  <img src="../images/EQA.jpg" alt="EQA">
+                </div>
+                <div class="eq-info">
+                  <h3>EQA</h3>
+                  <p class="eq-range">265 miles range</p>
+                  <div class="eq-specs d-flex justify-content-center gap-4 my-3">
+                    <div class="spec-item text-light"><i class="fas fa-bolt"></i> <span>190 kW</span></div>
+                    <div class="spec-item text-light"><i class="fas fa-tachometer-alt"></i> <span>8.9s 0-60</span></div>
+                    <div class="spec-item text-light"><i class="fas fa-charging-station"></i> <span>100 kW DC</span></div>
+                  </div>
+                  <a href="#" class="btn btn-light btn-lg">Discover EQA</a>
+                </div>
+              </div>
+            </div>
+            <!-- EQS -->
+            <div class="swiper-slide">
+              <div class="eq-card eq-card-featured eqs text-center">
+                <div class="eq-image mb-3">
+                  <img src="../images/EQS.jpg" alt="EQS">
+                </div>
+                <div class="eq-info">
+                  <h3>EQS</h3>
+                  <p class="eq-range">350 miles range</p>
+                  <div class="eq-specs d-flex justify-content-center gap-4 my-3">
+                    <div class="spec-item text-light"><i class="fas fa-bolt"></i> <span>385 kW</span></div>
+                    <div class="spec-item text-light"><i class="fas fa-tachometer-alt"></i> <span>4.1s 0-60</span></div>
+                    <div class="spec-item text-light"><i class="fas fa-charging-station"></i> <span>200 kW DC</span></div>
+                  </div>
+                  <a href="#" class="btn btn-light btn-lg">Discover EQS</a>
+                </div>
+              </div>
+            </div>
+            <!-- EQC -->
+            <div class="swiper-slide">
+              <div class="eq-card eq-card-featured eqc text-center">
+                <div class="eq-image mb-3">
+                  <img src="../images/EQC.jpg" alt="EQC">
+                </div>
+                <div class="eq-info">
+                  <h3>EQC</h3>
+                  <p class="eq-range">255 miles range</p>
+                  <div class="eq-specs d-flex justify-content-center gap-4 my-3">
+                    <div class="spec-item text-light"><i class="fas fa-bolt"></i> <span>300 kW</span></div>
+                    <div class="spec-item text-light"><i class="fas fa-tachometer-alt"></i> <span>5.1s 0-60</span></div>
+                    <div class="spec-item text-light"><i class="fas fa-charging-station"></i> <span>110 kW DC</span></div>
+                  </div>
+                  <a href="#" class="btn btn-light btn-lg">Discover EQC</a>
+                </div>
+              </div>
+            </div>
+            <!-- EQB -->
+            <div class="swiper-slide">
+              <div class="eq-card eq-card-featured eqb text-center">
+                <div class="eq-image mb-3">
+                  <img src="../images/EQB.jpg" alt="EQB">
+                </div>
+                <div class="eq-info">
+                  <h3>EQB</h3>
+                  <p class="eq-range">260 miles range</p>
+                  <div class="eq-specs d-flex justify-content-center gap-4 my-3">
+                    <div class="spec-item text-light"><i class="fas fa-bolt"></i> <span>215 kW</span></div>
+                    <div class="spec-item text-light"><i class="fas fa-tachometer-alt"></i> <span>6.2s 0-60</span></div>
+                    <div class="spec-item text-light"><i class="fas fa-charging-station"></i> <span>100 kW DC</span></div>
+                  </div>
+                  <a href="#" class="btn btn-light btn-lg">Discover EQB</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </section>
+    <script>
+      // Show showcase after loading
+      window.addEventListener('load',function(){
+        setTimeout(function(){
+          document.getElementById('eqShowcaseSection').style.display='block';
+        },1300);
+      });
+      // Swiper navigation
+      document.addEventListener('DOMContentLoaded', function() {
+        var eqSwiper = new Swiper('.eqSwiper', {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          lazy: true,
+          breakpoints: {
+            768: { slidesPerView: 2 },
+            1200: { slidesPerView: 3 }
+          }
+        });
+      });
+    </script>
+    <style>
+      .eq-card-featured {
+        /* border: 2px solid #dc3545; */
+        box-shadow: 0 0 32px #00eaff33, 0 2px 8px #0002;
+        transition: box-shadow .3s;
+      }
+      .eq-card-featured:hover {
+        box-shadow: 0 0 48px #dc3545, 0 4px 16px #0004;
+      }
+      .swiper-button-next, .swiper-button-prev {
+        color: #dc3545;
+        background: rgba(24,28,35,0.7);
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        box-shadow: 0 2px 8px #00eaff33;
+        transition: background 0.2s;
+      }
+      .swiper-button-next:hover, .swiper-button-prev:hover {
+        background: #00eaff;
+        color: #181c23;
+      }
+      .swiper-pagination-bullet {
+        background: #dc3545;
+        opacity: 0.5;
+      }
+      .swiper-pagination-bullet-active {
+        opacity: 1;
+      }
+    </style>
+
+    <!-- Charging Section -->
+    <section class="charging-section py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h2 class="section-title">Charging Solutions</h2>
+            <p>
+              Mercedes-EQ offers comprehensive charging solutions for your
+              electric vehicle, whether at home or on the road.
+            </p>
+
+            <div class="charging-option animate-on-scroll">
+              <div class="charging-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <div class="charging-info">
+                <h4>Home Charging</h4>
+                <p>
+                  Wallbox installation with up to 22 kW charging power for
+                  convenient overnight charging.
+                </p>
+              </div>
+            </div>
+
+            <div class="charging-option animate-on-scroll">
+              <div class="charging-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="charging-info">
+                <h4>Public Charging</h4>
+                <p>
+                  Access to over 60,000 public charging points with Mercedes me
+                  Charge.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="charging-animation">
+              <lottie-player
+                src="..js/charging.json"
+                background="transparent"
+                speed="1"
+                class="charging-lottie"
+                loop
+                autoplay
+              ></lottie-player>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer bg-dark text-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 mb-4">
+            <h5>Mercedes-Benz</h5>
+            <ul class="footer-links">
+              <li><a href="#" style="font-weight:600; color:#fff;">Company</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Careers</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Press</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Investors</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 mb-4">
+            <h5>Services</h5>
+            <ul class="footer-links">
+              <li><a href="#" style="font-weight:600; color:#fff;">Mercedes me</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Financial Services</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Service & Parts</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Mercedes-Benz Collection</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 mb-4">
+            <h5>Connect With Us</h5>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="newsletter mt-3">
+              <p>Subscribe to our newsletter</p>
+              <form>
+                <div class="input-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Your email"
+                  />
+                  <button class="btn btn-primary" type="submit">
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <style>
+          .footer-links a {
+            font-weight: 700 !important;
+            color: #fff !important;
+            letter-spacing: 0.5px;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+          }
+          .footer-links a:hover, .footer-links a:focus {
+            color:#dc3545 !important;
+            text-decoration: none !important;
+            transform: ease-in-out 0.2s;
+            transition: ease-in-out 0.2s;
+          }
+        </style>
+        <hr class="my-4" />
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2025 Mercedes-Benz. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p>
+             Crafted By Passion And Made With <i class="fas fa-heart"></i> by Adeoye 💯 </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- MDB5 JS -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+    ></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../js/swiper-init.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/main.js"></script>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <i class="fas fa-sun" id="lightIcon"></i>
+      <i class="fa-moon-o" id="darkIcon"></i>
+    </button>
+  </body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+  <head>
+    <meta charset="UTF-8" />
+     <link rel="shortcut icon" href="favicon.ico" type="image/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercedes-Benz | About</title>
+
+    <!-- MDB5 CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!--Font Share-->
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,600&f[]=chillax@200,600&f[]=kola@400&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+  <body>
+    <canvas id="cursor-canvas"></canvas>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            class="mb-logo"
+            src="images/logo.png"
+            alt="Mercedes-Benz Logo"
+            style="
+              height: 40px;
+              width: auto;
+              filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+              background: rgba(26, 26, 26, 0.85);
+              border-radius: 6px;
+              padding: 2px 8px;
+            "
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarNav"
+        >
+          <div class="animated-hamburger">
+            <lottie-player
+              src="js/menu-toggle.json"
+              background="transparent"
+              speed="1"
+              style="width: 40px; height: 40px"
+              hover
+            ></lottie-player>
+          </div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown mega-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="vehiclesDropdown"
+                role="button"
+                data-mdb-toggle="dropdown"
+              >
+                Vehicles
+              </a>
+              <div class="dropdown-menu mega-menu">
+                <div class="row">
+                  <div class="col-md-3">
+                    <h6>Sedans</h6>
+                    <a class="dropdown-item" href="vehicles/sedans.html"
+                      >A-Class</a
+                    >
+                    <a class="dropdown-item" href="vehicles/sedans.html"
+                      >C-Class</a
+                    >
+                    <a class="dropdown-item" href="vehicles/sedans.html"
+                      >E-Class</a
+                    >
+                    <a class="dropdown-item" href="vehicles/sedans.html"
+                      >S-Class</a
+                    >
+                  </div>
+                  <div class="col-md-3">
+                    <h6>SUVs</h6>
+                    <a class="dropdown-item" href="vehicles/suvs.html">GLA</a>
+                    <a class="dropdown-item" href="vehicles/suvs.html">GLC</a>
+                    <a class="dropdown-item" href="vehicles/suvs.html">GLE</a>
+                    <a class="dropdown-item" href="vehicles/suvs.html">GLS</a>
+                  </div>
+                  <div class="col-md-3">
+                    <h6>Electric Vehicles</h6>
+                    <a class="dropdown-item" href="vehicles/electric.html"
+                      >EQA</a
+                    >
+                    <a class="dropdown-item" href="vehicles/electric.html"
+                      >EQB</a
+                    >
+                    <a class="dropdown-item" href="vehicles/electric.html"
+                      >EQC</a
+                    >
+                    <a class="dropdown-item" href="vehicles/electric.html"
+                      >EQS</a
+                    >
+                  </div>
+                  <div class="col-md-3">
+                    <h6>Performance</h6>
+                    <a class="dropdown-item" href="#">AMG GT</a>
+                    <a class="dropdown-item" href="#">AMG SL</a>
+                    <a class="dropdown-item" href="#">Maybach</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="vehicles/electric.html">Technology</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Owners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+          </ul>
+          <form class="d-flex search-box">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search..."
+              />
+              <button class="btn btn-outline-light" type="button">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- About Hero Section -->
+    <section class="about-hero">
+      <div class="about-hero-image" style="max-height: 350px; overflow: hidden;">
+      <img src="images/logor.jpg" alt="Mercedes-Benz Heritage" style="width: 100%; height: auto; object-fit: cover; max-height: 350px;" />
+      <div class="image-overlay"></div>
+      </div>
+      <div class="about-hero-content">
+      <h1 class="about-title">The Future Shaped by History</h1>
+      <p class="about-subtitle">
+        For over a century, Mercedes-Benz has stood at the forefront of
+        automotive innovation
+      </p>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section py-5">
+      <div class="container">
+      <h2 class="section-title text-center mb-5">Our Heritage</h2>
+      <div class="timeline">
+
+        <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>1886</h3>
+          <p>
+          The birth of the automobile - Karl Benz patents the Motorwagen
+          </p>
+          <div class="timeline-image">
+          <img src="images/1886.jpg" alt="1886 Motorwagen" class="img-fluid timeline-card-img" />
+          </div>
+        </div>
+   c     </div>
+
+        <div class="timeline-item right">
+        <div class="timeline-content">
+          <h3>1901</h3>
+          <p>Mercedes 35 HP - the first modern automobile</p>
+          <div class="timeline-image">
+          <img src="images/35hp.jpeg" alt="1901 Mercedes" class="img-fluid timeline-card-img" />
+          </div>
+        </div>
+        </div>
+
+        <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>1926</h3>
+          <p>Benz & Cie merged with Daimler-Motoren-Gesellschaft to form Mercedes-Benz.</p>
+          <div class="timeline-image">
+          <img src="images/vintage.jpg" alt="1926 Merger" class="img-fluid timeline-card-img" />
+          </div>
+        </div>
+        </div>
+
+        <div class="timeline-item right">
+        <div class="timeline-content">
+          <h3>1936</h3>
+          <p>Mercedes-Benz 260 D became the world’s first diesel passenger car.</p>
+          <div class="timeline-image">
+          <img src="images/260D.jpg" alt="1936 Mercedes 260 D" class="img-fluid timeline-card-img" />
+          </div>
+        </div>
+        </div>
+
+        <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>1954</h3>
+          <p>The 300 SL Gullwing debuted with iconic doors and fuel injection.</p>
+          <div class="timeline-image">
+          <img src="images/300 SL.jpg" alt="1954 300 SL Gullwing" class="img-fluid timeline-card-img" />
+          </div>
+        </div>
+        </div>
+
+        <div class="timeline-item right">
+        <div class="timeline-content">
+          <h3>1979</h3>
+          <p>Mercedes introduced the rugged G-Wagon (G-Class).</p>
+          <div class="timeline-image">
+          <img src="images/gwagon.jpg" alt="1979 G-Class" class="img-fluid timeline-card-img" />
+          </div>
+        </div>
+        </div>
+
+        <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>1995</h3>
+          <p>First production car to have ESP, improving vehicle control.</p>
+          <div class="timeline-image">
+          <img src="images/dboard.jpg" alt="1995 ESP" class="img-fluid timeline-card-img" />
+          </div>
+        </div>
+        </div>
+
+        <div class="timeline-item right">
+        <div class="timeline-content">
+          <h3>2009</h3>
+          <p>Focus on eco-friendly engines and lightweight materials (BlueEFFICIENCY Technology).</p>
+          <div class="timeline-image">
+          <img src="images/rosé.jpg" alt="2009 BlueEFFICIENCY" class="img-fluid timeline-card-img" />
+          </div>
+        </div>
+        </div>
+
+        <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>2016</h3>
+          <p>Mercedes introduced EQ for electric vehicles (EVs).</p>
+          <div class="timeline-image">
+          <img src="images/sedan.jpg" alt="2016 EQ Brand" class="img-fluid timeline-card-img" />
+          </div>
+        </div>
+        </div>
+
+        <div class="timeline-item right">
+        <div class="timeline-content">
+          <h3>2021</h3>
+          <p>Unveiled the Vision AVTR, a futuristic concept car inspired by Avatar.</p>
+          <div class="timeline-image">
+          <img src="images/AVTR.jpg" alt="2021 Vision AVTR" class="img-fluid timeline-card-img" />
+          </div>
+        </div>
+        </div>
+
+        <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>2022</h3>
+          <p>Launched the EQS, a flagship electric luxury sedan with Hyperscreen.</p>
+          <div class="timeline-image">
+          <img src="images/hs.webp" alt="2022 EQS" class="img-fluid timeline-card-img" />
+          </div>
+        </div>
+        </div>
+
+
+        </div>
+      </div>
+      </div>
+    </section>
+    <style>
+      
+      .timeline, .timeline-item, .timeline-content {
+      visibility: visible !important;
+      opacity: 1 !important;
+      color: #dc3545;
+      }
+      .timeline-card-img {
+      display: block;
+      width: 100%;
+      color: azure;
+      max-width: 340px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      margin: 0 auto;
+      object-fit: cover;
+      background: #fff;
+      transition: background 0.3s;
+      }
+      .timeline-image {
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      }
+            .timeline-content h3{
+              color: #dc3545;
+            }
+            .timeline-content p{
+              color: #dc3545;
+              font-weight: bold;
+            }
+      @media (max-width: 576px) {
+      .timeline-card-img {
+        max-width: 95vw;
+      }
+      }
+ 
+      .dark-theme .timeline-card-img {
+      background: rgba(255,255,255,0.12);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.32);
+      }
+    </style>
+
+  
+
+       <!-- Footer -->
+    <footer id="footer" class="footer bg-dark text-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 mb-4">
+            <h5>Mercedes-Benz</h5>
+            <ul class="footer-links">
+              <li><a href="#" style="font-weight:600; color:#fff;">Company</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Careers</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Press</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Investors</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 mb-4">
+            <h5>Services</h5>
+            <ul class="footer-links">
+              <li><a href="#" style="font-weight:600; color:#fff;">Mercedes me</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Financial Services</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Service & Parts</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Mercedes-Benz Collection</a></li>
+            </ul>
+          </div>
+         
+          <div class="col-lg-3 mb-4">
+            <h5>Connect With Us</h5>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="newsletter mt-3">
+              <p>Subscribe to our newsletter</p>
+              <form>
+          <div class="input-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Your email"
+            />
+            <button class="btn btn-primary" type="submit">
+              Subscribe
+            </button>
+          </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <style>
+          .footer-links a {
+            font-weight: 700 !important;
+            color: #fff !important;
+            letter-spacing: 0.5px;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+          }
+          .footer-links a:hover, .footer-links a:focus {
+            color:#dc3545 !important;
+            text-decoration: none !important;
+            transform: ease-in-out 0.2s;
+            transition: ease-in-out 0.2s;
+          }
+        </style>
+        <hr class="my-4" />
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2025 Mercedes-Benz. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p>
+             Crafted By Passion And Made With <i class="fas fa-heart"></i> by Adeoye 💯 </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- MDB5 JS -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+    ></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/swiper-init.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/canvas.js"></script>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <i class="fas fa-sun" id="lightIcon"></i>
+      <i class="fa-moon-o" id="darkIcon"></i>
+    </button>
+    <script>
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const hamburgerAnim = document.getElementById('hamburgerAnim');
+if(hamburgerBtn && hamburgerAnim) {
+  hamburgerBtn.addEventListener('click', function() {
+    hamburgerAnim.classList.add('lottie-clicked');
+    setTimeout(() => {
+      hamburgerAnim.classList.remove('lottie-clicked');
+    }, 400);
+  });
+}
+</script>
+  </body>
+</html>

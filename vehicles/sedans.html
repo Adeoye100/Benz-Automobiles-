@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+  <head>
+      <link rel="shortcut icon" href="../images/logo.png" type="image/logo.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercedes-Benz | Sedans</title>
+
+    <!-- MDB5 CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!--Font Share-->
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,600&f[]=chillax@200,600&f[]=kola@400&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <style>
+      body {
+        background: linear-gradient(135deg, #181818 0%, #232526 60%, #b9935a 100%);
+        min-height: 100vh;
+        color: #f5f5f5;
+      }
+      .vehicle-hero.sedans-hero {
+        background: linear-gradient(rgba(24,24,24,0.7), rgba(185,147,90,0.3)), url('../images/sedans-hero.jpg') center/cover no-repeat;
+        padding: 120px 0 80px 0;
+        text-align: center;
+        border-bottom: 2px solid #b9935a;
+      }
+      .vehicle-hero .hero-content h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 3rem;
+        color: #b9935a;
+        letter-spacing: 2px;
+        text-shadow: 0 2px 16px #000, 0 0 2px #b9935a88;
+      }
+      .vehicle-hero .hero-content p {
+        font-size: 1.3rem;
+        color: #e0c68e;
+        margin-top: 1rem;
+        text-shadow: 0 1px 8px #000;
+      }
+      .model-card {
+        background: rgba(32, 32, 32, 0.95);
+        border-radius: 18px;
+        box-shadow: 0 8px 32px 0 rgba(185,147,90,0.15);
+        border: 1.5px solid #b9935a44;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .model-card:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 16px 40px 0 rgba(185,147,90,0.25);
+        border-color: #b9935a;
+      }
+      .model-image img {
+        border-radius: 16px 16px 0 0;
+        width: 100%;
+        object-fit: cover;
+        border-bottom: 2px solid #b9935a33;
+      }
+      .model-badge {
+        position: absolute;
+        top: 18px;
+        left: 18px;
+        background: linear-gradient(90deg, #b9935a, #e0c68e);
+        color: #181818;
+        font-weight: 700;
+        padding: 4px 16px;
+        border-radius: 12px;
+        font-size: 0.95rem;
+        box-shadow: 0 2px 8px #b9935a55;
+      }
+      .model-info h3 {
+        color: #b9935a;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+      }
+      .model-price {
+        color: #e0c68e;
+        font-size: 1.1rem;
+        margin-bottom: 0.7rem;
+      }
+      .model-specs .spec-item i {
+        color: #b9935a;
+      }
+      .model-actions .btn-outline-primary {
+        border-color: #b9935a;
+        color: #b9935a;
+        background: transparent;
+      }
+      .model-actions .btn-outline-primary:hover {
+        background: #b9935a;
+        color: #181818;
+      }
+      .model-actions .btn-primary {
+        background: linear-gradient(90deg, #b9935a, #e0c68e);
+        border: none;
+        color: #181818;
+      }
+      .model-actions .btn-primary:hover {
+        background: #e0c68e;
+        color: #181818;
+      }
+      .model-filter .filter-btn {
+        background: transparent;
+        border: 1.5px solid #b9935a;
+        color: #b9935a;
+        margin-right: 10px;
+        border-radius: 20px;
+        padding: 8px 24px;
+        font-weight: 600;
+        transition: background 0.2s, color 0.2s;
+      }
+      .model-filter .filter-btn.active,
+      .model-filter .filter-btn:hover {
+        background: linear-gradient(90deg, #b9935a, #e0c68e);
+        color: #181818;
+        border-color: #b9935a;
+      }
+      .model-comparison {
+        background: linear-gradient(90deg, #232526 60%, #b9935a 100%);
+        border-radius: 18px;
+        box-shadow: 0 4px 24px 0 #b9935a22;
+      }
+      .comparison-table th,
+      .comparison-table td {
+        border-color: #b9935a44;
+        color: #e0c68e;
+        background: transparent;
+      }
+      .footer {
+        background: linear-gradient(90deg, #181818 60%, #b9935a 100%);
+        color: #e0c68e;
+        border-top: 2px solid #b9935a;
+      }
+      .footer-links a {
+        color: #e0c68e;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: #b9935a;
+        text-decoration: underline;
+      }
+      .social-links a {
+        color: #b9935a;
+        font-size: 1.3rem;
+        margin-right: 12px;
+        transition: color 0.2s;
+      }
+      .social-links a:hover {
+        color: #e0c68e;
+      }
+      .newsletter .btn-primary {
+        background: linear-gradient(90deg, #b9935a, #e0c68e);
+        color: #181818;
+        border: none;
+      }
+      .newsletter .btn-primary:hover {
+        background: #e0c68e;
+        color: #181818;
+      }
+      .theme-toggle {
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        background: linear-gradient(90deg, #b9935a, #e0c68e);
+        color: #181818;
+        border: none;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        box-shadow: 0 2px 12px #b9935a55;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        transition: background 0.2s;
+      }
+      .theme-toggle:hover {
+        background: #e0c68e;
+        color: #181818;
+      }
+      @media (max-width: 991px) {
+        .vehicle-hero.sedans-hero {
+          padding: 80px 0 40px 0;
+        }
+      }
+    </style>
+    <!-- Google Fonts for luxury font -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&display=swap" rel="stylesheet">
+ 
+  </head>
+  <body>
+   <canvas id="cursor-canvas"></canvas>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html">
+          <img
+            class="mb-logo"
+            src="../images/logo.png"
+            alt="Mercedes-Benz Logo"
+            style="
+              height: 40px;
+              width: auto;
+              filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+              background: rgba(26, 26, 26, 0.85);
+              border-radius: 6px;
+              padding: 2px 8px;
+            "
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarNav"
+        >
+          <div class="animated-hamburger">
+            <lottie-player
+              src="../js/menu-toggle.json"
+              background="transparent"
+              speed="1"
+              style="width: 40px; height: 40px"
+              hover
+            ></lottie-player>
+          </div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown mega-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="vehiclesDropdown"
+                role="button"
+                data-mdb-toggle="dropdown"
+              >
+                Vehicles
+              </a>
+              <div class="dropdown-menu mega-menu">
+                <div class="row">
+                  <div class="col-md-3">
+                    <h6>Sedans</h6>
+                    <a class="dropdown-item" href="../vehicles/sedans.html"
+                      >A-Class</a
+                    >
+                    <a class="dropdown-item" href="../vehicles/sedans.html"
+                      >C-Class</a
+                    >
+                    <a class="dropdown-item" href="../vehicles/sedans.html"
+                      >E-Class</a
+                    >
+                    <a class="dropdown-item" href="../vehicles/sedans.html"
+                      >S-Class</a
+                    >
+                  </div>
+                  <div class="col-md-3">
+                    <h6>SUVs</h6>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLA</a>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLC</a>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLE</a>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLS</a>
+                  </div>
+                  <div class="col-md-3">
+                    <h6>Electric Vehicles</h6>
+                    <a class="dropdown-item" href="../vehicles/electric.html"
+                      >EQA</a
+                    >
+                    <a class="dropdown-item" href="../vehicles/electric.html"
+                      >EQB</a
+                    >
+                    <a class="dropdown-item" href="../vehicles/electric.html"
+                      >EQC</a
+                    >
+                    <a class="dropdown-item" href="../vehicles/electric.html"
+                      >EQS</a
+                    >
+                  </div>
+                  <div class="col-md-3">
+                    <h6>Performance</h6>
+                    <a class="dropdown-item" href="#">AMG GT</a>
+                    <a class="dropdown-item" href="#">AMG SL</a>
+                    <a class="dropdown-item" href="#">Maybach</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="electric.html">Technology</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../about.html">Owners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+          </ul>
+          <form class="d-flex search-box">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search..."
+              />
+              <button class="btn btn-outline-light" type="button">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Vehicle Hero Section -->
+    <section class="vehicle-hero sedans-hero">
+      <div class="hero-content">
+        <h1>Mercedes-Benz Sedans</h1>
+        <p>The perfect balance of performance, luxury, and innovation</p>
+      </div>
+    </section>
+
+  
+    <!-- Model Grid -->
+    <section class="model-grid py-5">
+      <div class="container">
+        <div class="row">
+          <!-- A-Class -->
+            <!-- A-Class -->
+            <div class="col-lg-4 col-md-6 mb-4" data-category="compact">
+            <div class="model-card">
+              <div class="model-image">
+              <img src="../images/A class.jpg" alt="A-Class" />
+              <div class="model-badge">New</div>
+              </div>
+              <div class="model-info">
+              <h3>A-Class Sedan</h3>
+              <p class="model-price">From $33,950</p>
+              <div class="model-specs">
+                <div class="spec-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>188 hp</span>
+                </div>
+                <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>35 mpg</span>
+                </div>
+                <div class="spec-item">
+                <i class="fas fa-cogs"></i>
+                <span>7G-DCT</span>
+                </div>
+              </div>
+              <div class="model-actions">
+                <a href="#" class="btn btn-outline-primary">Explore</a>
+                <a href="#" class="btn btn-primary">Build</a>
+              </div>
+              </div>
+            </div>
+            </div>
+            <!-- B-Class -->
+            <div class="col-lg-4 col-md-6 mb-4" data-category="compact">
+            <div class="model-card">
+              <div class="model-image">
+              <img src="../images/B class.jpg" alt="B-Class" />
+              <div class="model-badge">Family</div>
+              </div>
+              <div class="model-info">
+              <h3>B-Class Sedan</h3>
+              <p class="model-price">From $36,500</p>
+              <div class="model-specs">
+                <div class="spec-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>161 hp</span>
+                </div>
+                <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>33 mpg</span>
+                </div>
+                <div class="spec-item">
+                <i class="fas fa-cogs"></i>
+                <span>7G-DCT</span>
+                </div>
+              </div>
+              <div class="model-actions">
+                <a href="#" class="btn btn-outline-primary">Explore</a>
+                <a href="#" class="btn btn-primary">Build</a>
+              </div>
+              </div>
+            </div>
+            </div>
+            <!-- C-Class -->
+            <div class="col-lg-4 col-md-6 mb-4" data-category="executive">
+            <div class="model-card">
+              <div class="model-image">
+              <img src="../images/C class.jpg" alt="C-Class" />
+              <div class="model-badge">Best Seller</div>
+              </div>
+              <div class="model-info">
+              <h3>C-Class Sedan</h3>
+              <p class="model-price">From $43,550</p>
+              <div class="model-specs">
+                <div class="spec-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>255 hp</span>
+                </div>
+                <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>32 mpg</span>
+                </div>
+                <div class="spec-item">
+                <i class="fas fa-cogs"></i>
+                <span>9G-TRONIC</span>
+                </div>
+              </div>
+              <div class="model-actions">
+                <a href="#" class="btn btn-outline-primary">Explore</a>
+                <a href="#" class="btn btn-primary">Build</a>
+              </div>
+              </div>
+            </div>
+            </div>
+            <!-- E-Class -->
+            <div class="col-lg-4 col-md-6 mb-4" data-category="luxury">
+            <div class="model-card">
+              <div class="model-image">
+              <img src="../images/E class.jpg" alt="E-Class" />
+              <div class="model-badge">Luxury</div>
+              </div>
+              <div class="model-info">
+              <h3>E-Class Sedan</h3>
+              <p class="model-price">From $56,750</p>
+              <div class="model-specs">
+                <div class="spec-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>255 hp</span>
+                </div>
+                <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>31 mpg</span>
+                </div>
+                <div class="spec-item">
+                <i class="fas fa-cogs"></i>
+                <span>9G-TRONIC</span>
+                </div>
+              </div>
+              <div class="model-actions">
+                <a href="#" class="btn btn-outline-primary">Explore</a>
+                <a href="#" class="btn btn-primary">Build</a>
+              </div>
+              </div>
+            </div>
+            </div>
+            <!-- S-Class -->
+            <div class="col-lg-4 col-md-6 mb-4" data-category="luxury">
+            <div class="model-card">
+              <div class="model-image">
+              <img src="../images/S class 2.jpg" alt="S-Class" />
+              <div class="model-badge">Flagship</div>
+              </div>
+              <div class="model-info">
+              <h3>S-Class Sedan</h3>
+              <p class="model-price">From $114,500</p>
+              <div class="model-specs">
+                <div class="spec-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>429 hp</span>
+                </div>
+                <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>28 mpg</span>
+                </div>
+                <div class="spec-item">
+                <i class="fas fa-cogs"></i>
+                <span>9G-TRONIC</span>
+                </div>
+              </div>
+              <div class="model-actions">
+                <a href="#" class="btn btn-outline-primary">Explore</a>
+                <a href="#" class="btn btn-primary">Build</a>
+              </div>
+              </div>
+            </div>
+            </div>
+            <!-- AMG C 63 -->
+            <div class="col-lg-4 col-md-6 mb-4" data-category="performance">
+            <div class="model-card">
+              <div class="model-image">
+              <img src="../images/AMG SL.jpg" alt="AMG C 63" />
+              <div class="model-badge">AMG</div>
+              </div>
+              <div class="model-info">
+              <h3>AMG C 63 Sedan</h3>
+              <p class="model-price">From $70,650</p>
+              <div class="model-specs">
+                <div class="spec-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>469 hp</span>
+                </div>
+                <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>23 mpg</span>
+                </div>
+                <div class="spec-item">
+                <i class="fas fa-cogs"></i>
+                <span>AMG SPEEDSHIFT</span>
+                </div>
+              </div>
+              <div class="model-actions">
+                <a href="#" class="btn btn-outline-primary">Explore</a>
+                <a href="#" class="btn btn-primary">Build</a>
+              </div>
+              </div>
+            </div>
+            </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Model Comparison -->
+    <section class="model-comparison py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Compare Models</h2>
+        <div class="table-responsive">
+          <table class="table comparison-table">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Starting Price</th>
+                <th>Horsepower</th>
+                <th>0-60 mph</th>
+                <th>MPG (City/Hwy)</th>
+                <th>Seating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A-Class</td>
+                <td>$33,950</td>
+                <td>188 hp</td>
+                <td>7.1s</td>
+                <td>24/35</td>
+                <td>5</td>
+              </tr>
+             
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+      <footer id="footer" class="footer bg-dark text-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 mb-4">
+            <h5>Mercedes-Benz</h5>
+            <ul class="footer-links">
+              <li><a href="#" style="font-weight:600; color:#fff;">Company</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Careers</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Press</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Investors</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 mb-4">
+            <h5>Services</h5>
+            <ul class="footer-links">
+              <li><a href="#" style="font-weight:600; color:#fff;">Mercedes me</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Financial Services</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Service & Parts</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Mercedes-Benz Collection</a></li>
+            </ul>
+          </div>
+         
+          <div class="col-lg-3 mb-4">
+            <h5>Connect With Us</h5>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="newsletter mt-3">
+              <p>Subscribe to our newsletter</p>
+              <form>
+          <div class="input-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Your email"
+            />
+            <button class="btn btn-primary" type="submit">
+              Subscribe
+            </button>
+          </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <style>
+          .footer-links a {
+            font-weight: 700 !important;
+            color: #fff !important;
+            letter-spacing: 0.5px;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+          }
+          .footer-links a:hover, .footer-links a:focus {
+            color:#dc3545 !important;
+            text-decoration: none !important;
+            transform: ease-in-out 0.2s;
+            transition: ease-in-out 0.2s;
+          }
+        </style>
+        <hr class="my-4" />
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2025 Mercedes-Benz. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p>
+             Crafted By Passion And Made With <i class="fas fa-heart"></i> by Adeoye 💯 </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- MDB5 JS -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+    ></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../js/swiper-init.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/main.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/images/logo.png" type="image/logo.png" />
+    <meta name="description" content="Mercedes-Benz official website showcasing luxury vehicles, technology, and innovation." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercedes-Benz | Home</title>
+
+    <!-- MDB5 CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+      rel="stylesheet"
+    />
+<!--Font Share-->
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,600&f[]=chillax@200,600&f[]=kola@400&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+  <body class="banner-canvas">
+    <!-- Navigation -->
+      <canvas id="cursor-canvas"></canvas>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            class="mb-logo"
+            src="images/logo.png"
+            alt="Mercedes-Benz Logo"
+            width="40"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarNav"
+          id="hamburgerBtn"
+        >
+          <div class="animated-hamburger" id="hamburgerAnim">
+          <lottie-player
+            src="js/menu-toggle.json"
+            background="transparent"
+            speed="1"
+            style="width: 40px; height: 40px;"
+            loop
+            hover
+          ></lottie-player>
+        </div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown mega-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="vehiclesDropdown"
+                role="button"
+                data-mdb-toggle="dropdown"
+                style="font-weight: bold; color: #dc3545;"
+                aria-expanded="false"
+              >
+                Vehicles
+              </a>
+              <div class="dropdown-menu mega-menu">
+                <div class="row">
+                  <div class="col-md-3">
+                    <h6>Sedans</h6>
+                    <a class="dropdown-item" href="vehicles/sedans.html"
+                      >A-Class</a
+                    >
+                    <a class="dropdown-item" href="vehicles/sedans.html"
+                      >C-Class</a
+                    >
+                    <a class="dropdown-item" href="vehicles/sedans.html"
+                      >E-Class</a
+                    >
+                    <a class="dropdown-item" href="vehicles/sedans.html"
+                      >S-Class</a
+                    > 
+                  </div>
+                  <div class="col-md-3">
+                    <h6>SUVs</h6>
+                    <a class="dropdown-item" href="vehicles/suvs.html">GLA</a>
+                    <a class="dropdown-item" href="vehicles/suvs.html">GLC</a>
+                    <a class="dropdown-item" href="vehicles/suvs.html">GLE</a>
+                    <a class="dropdown-item" href="vehicles/suvs.html">GLS</a>
+                  </div>
+                  <div class="col-md-3">
+                    <h6>Electric Vehicles</h6>
+                    <a class="dropdown-item" href="vehicles/electric.html"
+                      >EQA</a
+                    >
+                    <a class="dropdown-item" href="vehicles/electric.html"
+                      >EQB</a
+                    >
+                    <a class="dropdown-item" href="vehicles/electric.html"
+                      >EQC</a
+                    >
+                    <a class="dropdown-item" href="vehicles/electric.html"
+                      >EQS</a
+                    >
+                  </div>
+                  <div class="col-md-3">
+                    <h6>Performance</h6>
+                    <a class="dropdown-item" href="#">AMG GT</a>
+                    <a class="dropdown-item" href="#">AMG SL</a>
+                    <a class="dropdown-item" href="#">Maybach</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="vehicles/configurator.html">Technology</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Owners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+          </ul>
+          <form class="d-flex search-box">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search..."
+              />
+              <button class="btn btn-outline-light" type="button">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-video">
+        <video autoplay muted loop playsinline>
+          <source src="images/Electric.mp4" type="video/mp4" />
+        </video>
+        <div class="video-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="line-1">Electric.</span>
+          <span class="line-2">intelligence</span>
+          <span class="line-3">Mercedes-Benz.</span>
+        </h1>
+        <p class="hero-subtitle">Experience the future of automotive luxury</p>
+        <a href="vehicles/configurator.html" class="btn btn-lg hero-cta"
+          style="background: #dc3545; color: #fff; border: none; box-shadow: 0 4px 24px rgba(220,53,69,0.25); font-weight: 700; letter-spacing: 1px; padding: 0.75rem 2.5rem; transition: background 0.2s, box-shadow 0.2s; border-radius: 50px;"
+          onmouseover="this.style.background='#b71c1c';this.style.boxShadow='0 6px 32px rgba(220,53,69,0.35)';"
+          onmouseout="this.style.background='#dc3545';this.style.boxShadow='0 4px 24px rgba(220,53,69,0.25)';"
+        >Explore Models</a>
+        <div class="scroll-indicator">
+          <lottie-player
+            src="js/scroll-down.json"
+            background="transparent"
+            speed="1"
+            style="width: 50px; height: 50px"
+            loop
+            autoplay
+          ></lottie-player>
+        </div>
+      </div>
+    </section>
+
+    <!-- Model Showcase Section -->
+    <section id="models" class="model-showcase py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Our Latest Models</h2>
+        <div class="swiper modelSwiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="model-card">
+                <div class="model-image">
+                  <img
+                    data-src="images/sedan.jpg"
+                    class="swiper-lazy"
+                    alt="EQS Sedan"
+                  />
+                  <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="model-info">
+                  <h3>EQS Sedan</h3>
+                  <p class="model-price">From $102,310</p>
+                  <div class="model-specs">
+                    <div class="spec-item">
+                      <i class="fas fa-bolt"></i>
+                      <span>350mi range</span>
+                    </div>
+                    <div class="spec-item">
+                      <i class="fas fa-tachometer-alt"></i>
+                      <span>3.4s 0-60</span>
+                    </div>
+                    <div class="spec-item">
+                      <i class="fas fa-charging-station"></i>
+                      <span>200kW charging</span>
+                    </div>
+                  </div>
+                  <a href="vehicles/configurator.html" class="btn btn-primary"
+                    >Explore</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="model-card">
+                <div class="model-image">
+                  <img
+                    data-src="images/s show.jpg"
+                    class="swiper-lazy"
+                    alt="S-Class"
+                  />
+                  <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="model-info">
+                  <h3>S-Class</h3>
+                  <p class="model-price">From $111,100</p>
+                  <div class="model-specs">
+                    <div class="spec-item">
+                      <i class="fas fa-cogs"></i>
+                      <span>V8 Biturbo</span>
+                    </div>
+                    <div class="spec-item">
+                      <i class="fas fa-tachometer-alt"></i>
+                      <span>4.5s 0-60</span>
+                    </div>
+                    <div class="spec-item">
+                      <i class="fas fa-chair"></i>
+                      <span>Executive Seats</span>
+                    </div>
+                  </div>
+                  <a href="vehicles/sedans.html" class="btn btn-primary"
+                    >Explore</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="model-card">
+                <div class="model-image">
+                  <img
+                    data-src="images/A class.jpg"
+                    class="swiper-lazy"
+                    alt="A-Class"
+                  />
+                  <div class="swiper-lazy-preloader"></div>
+                </div>
+              <div class="model-info">
+                <h3>A-Class</h3>
+                <p class="model-price">From $33,950</p>
+                <div class="model-specs">
+                <div class="spec-item">
+                  <i class="fas fa-cogs"></i>
+                  <span>Turbocharged I4</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-tachometer-alt"></i>
+                  <span>6.1s 0-60</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-gas-pump"></i>
+                  <span>28 MPG city</span>
+                </div>
+                </div>
+                <a href="vehicles/sedans.html" class="btn btn-primary"
+                >Explore</a
+                >
+               </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology-section py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Innovation by Design</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="tech-video"></div>
+              <video autoplay muted loop playsinline poster="images/mbux-hyperscreen.jpg" class="img-fluid rounded shadow">
+                <source src="images/mbux.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="tech-title">MBUX Hyperscreen</h3>
+            <p class="tech-description">
+              The MBUX Hyperscreen represents the absolute peak of what's
+              possible right now. Three screens under a single glass cover merge
+              seamlessly to form an impressive widescreen.
+            </p>
+            <ul class="tech-features" style="list-style: none; padding-left: 0;">
+              <li>
+              <i class="fas fa-check-circle"></i> Zero-layer design with AI
+              </li>
+              <li>
+              <i class="fas fa-check-circle"></i> Adaptive software that
+              learns your preferences
+              </li>
+              <li>
+              <i class="fas fa-check-circle"></i> Augmented reality navigation
+              </li>
+              <li>
+              <i class="fas fa-check-circle"></i> Natural voice control with
+              "Hey Mercedes"
+              </li>
+            </ul>
+           
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer bg-dark text-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 mb-4">
+            <h5>Mercedes-Benz</h5>
+            <ul class="footer-links">
+              <li><a href="#" style="font-weight:600; color:#fff;">Company</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Careers</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Press</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Investors</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 mb-4">
+            <h5>Services</h5>
+            <ul class="footer-links">
+              <li><a href="#" style="font-weight:600; color:#fff;">Mercedes me</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Financial Services</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Service & Parts</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Mercedes-Benz Collection</a></li>
+            </ul>
+          </div>
+         
+          <div class="col-lg-3 mb-4">
+            <h5>Connect With Us</h5>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="newsletter mt-3">
+              <p>Subscribe to our newsletter</p>
+              <form>
+          <div class="input-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Your email"
+            />
+            <button class="btn btn-primary" type="submit">
+              Subscribe
+            </button>
+          </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <style>
+          .footer-links a {
+            font-weight: 700 !important;
+            color: #fff !important;
+            letter-spacing: 0.5px;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+          }
+          .footer-links a:hover, .footer-links a:focus {
+            color:#dc3545 !important;
+            text-decoration: none !important;
+            transform: ease-in-out 0.2s;
+            transition: ease-in-out 0.2s;
+          }
+        </style>
+        <hr class="my-4" />
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2025 Mercedes-Benz. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p>
+             Crafted By Passion And Made With <i class="fas fa-heart"></i> by Adeoye 💯 </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- MDB5 JS -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+    ></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/swiper-init.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/canvas.js"></script>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <i class="fas fa-sun" id="lightIcon"></i>
+      <i class="fa-moon-o" id="darkIcon"></i>
+    </button>
+    <script>
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const hamburgerAnim = document.getElementById('hamburgerAnim');
+if(hamburgerBtn && hamburgerAnim) {
+  hamburgerBtn.addEventListener('click', function() {
+    hamburgerAnim.classList.add('lottie-clicked');
+    setTimeout(() => {
+      hamburgerAnim.classList.remove('lottie-clicked');
+    }, 400);
+  });
+}
+</script>
+  </body>
+</html>

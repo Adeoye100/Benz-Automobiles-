@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+  <head>
+    <meta charset="UTF-8" />
+     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercedes-Benz | SUVs</title>
+
+    <!-- MDB5 CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!--Font Share-->
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,600&f[]=chillax@200,600&f[]=kola@400&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+  </head>
+  <body>
+    <canvas id="cursor-canvas"></canvas>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img
+            class="mb-logo"
+            src="../images/logo.png"
+            alt="Mercedes-Benz Logo"
+            style="
+              height: 40px;
+              width: auto;
+              filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+              background: rgba(26, 26, 26, 0.85);
+              border-radius: 6px;
+              padding: 2px 8px;
+            "
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarNav"
+        >
+          <div class="animated-hamburger">
+            <lottie-player
+              src="../js/menu-toggle.json"
+              background="transparent"
+              speed="1"
+              style="width: 40px; height: 40px"
+              hover
+            ></lottie-player>
+          </div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown mega-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="vehiclesDropdown"
+                role="button"
+                data-mdb-toggle="dropdown"
+              >
+                Vehicles
+              </a>
+              <div class="dropdown-menu mega-menu">
+                <div class="row">
+                  <div class="col-md-3">
+                    <h6>Sedans</h6>
+                    <a class="dropdown-item" href="../vehicles/sedans.html"
+                      >A-Class</a
+                    >
+                    <a class="dropdown-item" href="../vehicles/sedans.html"
+                      >C-Class</a
+                    >
+                    <a class="dropdown-item" href="../vehicles/sedans.html"
+                      >E-Class</a
+                    >
+                    <a class="dropdown-item" href="../vehicles/sedans.html"
+                      >S-Class</a
+                    >
+                  </div>
+                  <div class="col-md-3">
+                    <h6>SUVs</h6>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLA</a>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLC</a>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLE</a>
+                    <a class="dropdown-item" href="../vehicles/suvs.html">GLS</a>
+                  </div>
+                  <div class="col-md-3">
+                    <h6>Electric Vehicles</h6>
+                    <a class="dropdown-item" href="../vehicles/electric.html"
+                      >EQA</a
+                    >
+                    <a class="dropdown-item" href="../vehicles/electric.html"
+                      >EQB</a
+                    >
+                    <a class="dropdown-item" href="../vehicles/electric.html"
+                      >EQC</a
+                    >
+                    <a class="dropdown-item" href="../vehicles/electric.html"
+                      >EQS</a
+                    >
+                  </div>
+                  <div class="col-md-3">
+                    <h6>Performance</h6>
+                    <a class="dropdown-item" href="#">AMG GT</a>
+                    <a class="dropdown-item" href="#">AMG SL</a>
+                    <a class="dropdown-item" href="#">Maybach</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="electric.html">Technology</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../about.html">Owners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+          </ul>
+          <form class="d-flex search-box">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search..."
+              />
+              <button class="btn btn-outline-light" type="button">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- SUV Hero Section -->
+    <section class="vehicle-hero suvs-hero">
+      <div class="hero-content">
+        <h1>Mercedes-Benz SUVs</h1>
+        <p>Commanding presence meets uncompromising luxury</p>
+      </div>
+    </section>
+    <style>
+      .lottie-feature-icon {
+        width: 80px !important;
+        height: 80px !important;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+
+    <!-- Model Filter -->
+    <section class="model-switcher py-4 bg-dark">
+      <div class="container">
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="../vehicles/sedans.html" class="btn btn-outline-light px-4 py-2 rounded-pill fw-semibold">
+            Sedans
+          </a>
+          <a href="../vehicles/suvs.html" class="btn btn-light px-4 py-2 rounded-pill fw-semibold active">
+            SUVs
+          </a>
+          <a href="../vehicles/electric.html" class="btn btn-outline-light px-4 py-2 rounded-pill fw-semibold">
+            Electric
+          </a>
+          <a href="../vehicles/configurator.html" class="btn btn-outline-light px-4 py-2 rounded-pill fw-semibold">
+            Performance
+          </a>
+        </div>
+      </div>
+    </section>
+    </section>
+
+    <!-- Model Grid -->
+    <section class="model-grid py-5">
+      <div class="container">
+        <div class="row">
+          <!-- GLA -->
+          <div class="col-lg-4 col-md-6 mb-4" data-category="compact">
+            <div class="model-card">
+              <div class="model-image">
+                <img src="../images/gla.jpg" alt="GLA" loading="lazy" />
+              </div>
+              <div class="model-info">
+                <h3>GLA</h3>
+                <p class="model-price">From $37,500</p>
+                <div class="model-specs">
+                  <div class="spec-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>221 hp</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fas fa-gas-pump"></i>
+                    <span>28 mpg</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fas fa-users"></i>
+                    <span>5 seats</span>
+                  </div>
+                </div>
+                <div class="model-actions">
+                  <a href="#" class="btn btn-outline-primary">Explore</a>
+                  <a href="../vehicles/configurator.html" class="btn btn-primary"
+                    >Build</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GLC -->
+          <div class="col-lg-4 col-md-6 mb-4" data-category="midsize">
+            <div class="model-card">
+              <div class="model-image">
+                <img
+                  src="../images/GLC.jpg"
+                  alt="GLC"
+                  loading="lazy"
+                />
+              </div>
+              <div class="model-info">
+                <h3>GLC</h3>
+                <p class="model-price">From $45,950</p>
+                <div class="model-specs">
+                  <div class="spec-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>255 hp</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fas fa-gas-pump"></i>
+                    <span>25 mpg</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fas fa-users"></i>
+                    <span>5 seats</span>
+                  </div>
+                </div>
+                <div class="model-actions">
+                  <a href="#" class="btn btn-outline-primary">Explore</a>
+                  <a href="../vehicles/configurator.html" class="btn btn-primary"
+                    >Build</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- GLE -->
+          <div class="col-lg-4 col-md-6 mb-4" data-category="midsize">
+            <div class="model-card">
+              <div class="model-image">
+                <img
+                  src="../images/GLE.jpg"
+                  alt="GLE"
+                  loading="lazy"
+                />
+              </div>
+              <div class="model-info">
+                <h3>GLE</h3>
+                <p class="model-price">From $57,700</p>
+                <div class="model-specs">
+                  <div class="spec-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>255 hp</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fas fa-gas-pump"></i>
+                    <span>22 mpg</span>
+                    </div>
+                  <div class="spec-item">
+                    <i class="fas fa-users"></i>
+                    <span>5 seats</span>
+                  </div>
+                </div>
+                <div class="model-actions">
+                  <a href="#" class="btn btn-outline-primary">Explore</a>
+                  <a href="../vehicles/configurator.html" class="btn btn-primary"
+                    >Build</a
+                  >
+              </div>
+         </div>
+            </div>
+          </div>
+
+          <!-- GLS -->
+          <div class="col-lg-4 col-md-6 mb-4" data-category="fullsize">
+            <div class="model-card">
+              <div class="model-image">
+                <img
+                  src="../images/GLS.jpg"
+                  alt="GLS"
+                  loading="lazy"
+                />
+              </div>
+              <div class="model-info">
+                <h3>GLS</h3>
+                <p class="model-price">From $80,000</p>
+                <div class="model-specs">
+                  <div class="spec-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>362 hp</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fas fa-gas-pump"></i>
+                    <span>21 mpg</span> 
+                  </div>
+                  <div class="spec-item">
+                    <i class="fas fa-users"></i>
+                    <span>7 seats</span>
+                  </div>
+                </div>
+                <div class="model-actions">
+                  <a href="#" class="btn btn-outline-primary">Explore</a>
+                  <a href="../vehicles/configurator.html" class="btn btn-primary"
+                    >Build</a
+                  >
+                </div>
+              </div>
+      </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    <!-- Features Section -->
+    <section class="features-section py-5 bg-light">
+                <lottie-player
+                  src="../js/4matic.json"
+                  background="t"
+                  speed="1"
+                  style="width: 80px; height: 80px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+                <h3>4MATIC All-Wheel Drive</h3>
+                <p>
+                4MATIC intelligently sends power to all four wheels for enhanced traction, stability, and confidence on any road or weather condition.
+                </p>
+                <lottie-player
+                  src="../js/air-suspension.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 80px; height: 80px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>AIRMATIC Suspension</h3>
+              <p>
+                Adaptive air suspension automatically adjusts to road conditions
+                for superior comfort and handling.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+       <!-- Footer -->
+ <footer id="footer" class="footer bg-dark text-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 mb-4">
+            <h5>Mercedes-Benz</h5>
+            <ul class="footer-links">
+              <li><a href="#" style="font-weight:600; color:#fff;">Company</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Careers</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Press</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Investors</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 mb-4">
+            <h5>Services</h5>
+            <ul class="footer-links">
+              <li><a href="#" style="font-weight:600; color:#fff;">Mercedes me</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Financial Services</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Service & Parts</a></li>
+              <li><a href="#" style="font-weight:600; color:#fff;">Mercedes-Benz Collection</a></li>
+            </ul>
+          </div>
+         
+          <div class="col-lg-3 mb-4">
+            <h5>Connect With Us</h5>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="newsletter mt-3">
+              <p>Subscribe to our newsletter</p>
+              <form>
+          <div class="input-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Your email"
+            />
+            <button class="btn btn-primary" type="submit">
+              Subscribe
+            </button>
+          </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <style>
+          .footer-links a {
+            font-weight: 700 !important;
+            color: #fff !important;
+            letter-spacing: 0.5px;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+          }
+          .footer-links a:hover, .footer-links a:focus {
+            color:#dc3545 !important;
+            text-decoration: none !important;
+            transform: ease-in-out 0.2s;
+            transition: ease-in-out 0.2s;
+          }
+        </style>
+        <hr class="my-4" />
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2025 Mercedes-Benz. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p>
+             Crafted By Passion And Made With <i class="fas fa-heart"></i> by Adeoye 💯 </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- MDB5 JS -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+    ></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../js/swiper-init.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/main.js"></script>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <i class="fas fa-sun" id="lightIcon"></i>
+      <i class="fa-moon-o" id="darkIcon"></i>
+    </button>
+    <script>
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const hamburgerAnim = document.getElementById('hamburgerAnim');
+if(hamburgerBtn && hamburgerAnim) {
+  hamburgerBtn.addEventListener('click', function() {
+    hamburgerAnim.classList.add('lottie-clicked');
+    setTimeout(() => {
+      hamburgerAnim.classList.remove('lottie-clicked');
+    }, 400);
+  });
+}
+</script>
+  </body>
+</html>
